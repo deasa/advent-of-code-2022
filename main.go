@@ -1,10 +1,8 @@
 package main
 
-import (
-	"github.com/deasa/advent-of-code-2022/daythree"
-)
+import "github.com/deasa/advent-of-code-2022/dayfour"
 
 
 func main() {
-	daythree.Play()
+	dayfour.Play()
 }
