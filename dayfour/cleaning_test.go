@@ -34,7 +34,15 @@ func Test_elfCleaningAssignmentPairs_hasFullyContainedAssignment(t *testing.T) {
 				firstElf: sequentialInt(6,10),
 				secondElf: sequentialInt(7,11),
 			},
-			want: false,
+			want: true,
+		},
+		{
+			name: "first contains one of second",
+			fields: fields{
+				firstElf: sequentialInt(6,10),
+				secondElf: sequentialInt(10,11),
+			},
+			want: true,
 		},
 		{
 			name: "unrelated",

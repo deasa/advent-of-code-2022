@@ -5,6 +5,9 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 type sectionList []int
@@ -21,14 +24,18 @@ func Play() {
 }
 
 func (p *elfCleaningAssignmentPairs) hasFullyContainedAssignment() bool {
-	fStart, fEnd := p.firstElf[0], p.firstElf[len(p.firstElf)-1]
-	sStart, sEnd := p.secondElf[0], p.secondElf[len(p.secondElf)-1]
+	// fStart, fEnd := p.firstElf[0], p.firstElf[len(p.firstElf)-1]
+	// sStart, sEnd := p.secondElf[0], p.secondElf[len(p.secondElf)-1]
 
-	if fStart >= sStart && fEnd <= sEnd {
-		return true
+	for _, i := range p.firstElf {
+		if assert.Contains(&testing.T{}, p.secondElf, i) {
+			return true
+		}
 	}
-	if sStart >= fStart && sEnd <= fEnd {
-		return true
+	for _, i := range p.secondElf {
+		if assert.Contains(&testing.T{}, p.firstElf, i) {
+			return true
+		}
 	}
 	return false
 }
