@@ -35,7 +35,9 @@ func Play() {
 	fmt.Printf("%#v", tops)
 }
 
-func moveStacksAndReturnTops(instructions []instruction) []string
+func moveStacksAndReturnTops(instructions []instruction) []string {
+	
+}
 
 func prepend(s []string, container string) []string {
 	if len(container) != 1 {
